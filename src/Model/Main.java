@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         congTy = new CongTy();
-        int luaChon;
+        // int luaChon;
         taodulieu();
         do {
             showMenu();
