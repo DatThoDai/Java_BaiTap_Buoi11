@@ -8,8 +8,8 @@ public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         congTy = new CongTy();
-        // int luaChon;
-        taodulieu();
+         int luaChon;
+//        taodulieu();
         do {
             showMenu();
             luaChon = Integer.parseInt(scanner.nextLine());
