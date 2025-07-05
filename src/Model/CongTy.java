@@ -274,7 +274,7 @@ public class CongTy {
 	// Chuc nang 6: Tinh va xuat tong luong cho toan cong ty
 	public void TinhVaXuatTongLuongCongTy() {
 		double tongLuong = TongLuongToanCongTy();
-		OutputFormatter.printFormattedValue("\nTONG LUONG TOAN CONG TY", tongLuong);
+		System.out.printf("\nTONG LUONG TOAN CONG TY: %.2f\n", tongLuong);
 	}
 
 	public double TongLuongToanCongTy() {
@@ -288,7 +288,7 @@ public class CongTy {
 	// Chuc nang 7: Tim nhan vien thuong co luong cao nhat
 	public void NhanVienThuongCoLuongCaoNhat() {
 		if (dsNhanVien == null || dsNhanVien.isEmpty()) {
-			OutputFormatter.printMessage("Danh sach nhan vien trong!");
+			System.out.println("Danh sach nhan vien trong!");
 			return;
 		}
 
@@ -301,13 +301,13 @@ public class CongTy {
 		}
 
 		if (!coNhanVienThuong) {
-			OutputFormatter.printMessage("Khong co nhan vien thuong nao trong cong ty!");
+			System.out.println("Khong co nhan vien thuong nao trong cong ty!");
 			return;
 		}
 
 		double luongMax = luongNhanVienThuongCaoNhat();
 
-		OutputFormatter.printTitle("NHAN VIEN THUONG CO LUONG CAO NHAT");
+		System.out.println("\nNHAN VIEN THUONG CO LUONG CAO NHAT:");
 		OutputFormatter.printNhanVienHeader();
 
 		for (NhanVien nv : dsNhanVien) {
@@ -317,7 +317,7 @@ public class CongTy {
 		}
 
 		OutputFormatter.printNhanVienFooter();
-		OutputFormatter.printFormattedValue("Luong nhan vien thuong cao nhat la", luongMax);
+		System.out.printf("Luong nhan vien thuong cao nhat la: %.2f\n", luongMax);
 	}
 
 	private double luongNhanVienThuongCaoNhat() {
@@ -333,7 +333,7 @@ public class CongTy {
 	// Chuc nang 8: Tim truong phong co so luong nhan vien duoi quyen nhieu nhat
 	public void TruongPhongCoNhieuNhanVienNhat() {
 		if (dsNhanVien == null || dsNhanVien.isEmpty()) {
-			OutputFormatter.printMessage("Danh sach nhan vien trong!");
+			System.out.println("Danh sach nhan vien trong!");
 			return;
 		}
 
@@ -346,13 +346,13 @@ public class CongTy {
 		}
 
 		if (!coTruongPhong) {
-			OutputFormatter.printMessage("Khong co truong phong nao trong cong ty!");
+			System.out.println("Khong co truong phong nao trong cong ty!");
 			return;
 		}
 
 		int soLuongMax = soLuongNhanVienDuoiQuyenNhieuNhat();
 
-		OutputFormatter.printTitle("TRUONG PHONG CO SO LUONG NHAN VIEN DUOI QUYEN NHIEU NHAT");
+		System.out.println("\nTRUONG PHONG CO SO LUONG NHAN VIEN DUOI QUYEN NHIEU NHAT:");
 		OutputFormatter.printNhanVienHeader();
 
 		for (NhanVien nv : dsNhanVien) {
@@ -362,7 +362,7 @@ public class CongTy {
 		}
 
 		OutputFormatter.printNhanVienFooter();
-		OutputFormatter.printFormattedValue("So luong nhan vien duoi quyen nhieu nhat la", soLuongMax);
+		System.out.printf("So luong nhan vien duoi quyen nhieu nhat la: %d\n", soLuongMax);
 	}
 
 	private int soLuongNhanVienDuoiQuyenNhieuNhat() {
@@ -378,7 +378,7 @@ public class CongTy {
 	// Chuc nang 9: Sap xep nhan vien toan cong ty theo ten
 	public void SapXepNhanVienTheoTen() {
 		if (dsNhanVien == null || dsNhanVien.isEmpty()) {
-			OutputFormatter.printMessage("Danh sach nhan vien trong!");
+			System.out.println("Danh sach nhan vien trong!");
 			return;
 		}
 
@@ -390,7 +390,7 @@ public class CongTy {
 	// Chuc nang 10: Sap xep nhan vien toan cong ty giam dan theo luong
 	public void SapXepNhanVienGiamDanTheoLuong() {
 		if (dsNhanVien == null || dsNhanVien.isEmpty()) {
-			OutputFormatter.printMessage("Danh sach nhan vien trong!");
+			System.out.println("Danh sach nhan vien trong!");
 			return;
 		}
 
@@ -402,7 +402,7 @@ public class CongTy {
 	// Chuc nang 11: Tim giam doc co co phan nhieu nhat
 	public void GiamDocCoCoPhanNhieuNhat() {
 		if (dsNhanVien == null || dsNhanVien.isEmpty()) {
-			OutputFormatter.printMessage("Danh sach nhan vien trong!");
+			System.out.println("Danh sach nhan vien trong!");
 			return;
 		}
 
@@ -415,13 +415,13 @@ public class CongTy {
 		}
 
 		if (!coGiamDoc) {
-			OutputFormatter.printMessage("Khong co giam doc nao trong cong ty!");
+			System.out.println("Khong co giam doc nao trong cong ty!");
 			return;
 		}
 
 		double phanTramMax = phanTramCoPhanNhieuNhat();
 
-		OutputFormatter.printTitle("GIAM DOC CO CO PHAN NHIEU NHAT");
+		System.out.println("\nGIAM DOC CO CO PHAN NHIEU NHAT:");
 		OutputFormatter.printNhanVienHeader();
 
 		for (NhanVien nv : dsNhanVien) {
@@ -431,7 +431,7 @@ public class CongTy {
 		}
 
 		OutputFormatter.printNhanVienFooter();
-		OutputFormatter.printFormattedValue("Phan tram co phan nhieu nhat la", phanTramMax + "%");
+		System.out.printf("Phan tram co phan nhieu nhat la: %.2f%%\n", phanTramMax);
 	}
 
 	private double phanTramCoPhanNhieuNhat() {
@@ -447,7 +447,7 @@ public class CongTy {
 	// Chuc nang 12: Tinh tong thu nhap tung giam doc
 	public void TongThuNhapTungGiamDoc() {
 		if (dsNhanVien == null || dsNhanVien.isEmpty()) {
-			OutputFormatter.printMessage("Danh sach nhan vien trong!");
+			System.out.println("Danh sach nhan vien trong!");
 			return;
 		}
 
@@ -460,7 +460,7 @@ public class CongTy {
 		}
 
 		if (!coGiamDoc) {
-			OutputFormatter.printMessage("Khong co giam doc nao trong cong ty!");
+			System.out.println("Khong co giam doc nao trong cong ty!");
 			return;
 		}
 
@@ -476,9 +476,8 @@ public class CongTy {
 						gd.tinhLuongThang(), gd.getCoPhan(), thuNhap);
 			}
 		}
-
-		OutputFormatter.printSeparator();
-		OutputFormatter.printFormattedValue("Loi nhuan cong ty", loiNhuan);
+		OutputFormatter.printThuNhapGiamDocFooter();
+		System.out.printf("Loi nhuan cong ty: %.2f\n", loiNhuan);
 	}
 
 	private double LoiNhuanCongTy() {

@@ -5,7 +5,7 @@ import Model.*;
 
 public class OutputFormatter {
     
-    private static final String LONG_SEPARATOR = "==================================================================================";
+    private static final String LONG_SEPARATOR = "=============================================================================================";
     private static final String SHORT_SEPARATOR = "+----------------------+-----------------+-----------------+";
     private static final String MEDIUM_SEPARATOR = "+----------------------+-----------------+-----------------+----------+";
     
@@ -63,6 +63,9 @@ public class OutputFormatter {
         System.out.printf("%-10s | %-20s | %-12s | %-12.2f | %-12.2f | %-12.2f\n", 
             maNV, hoTen, sdt, luongThang, coPhan, thuNhap);
     }
+    public static void printThuNhapGiamDocFooter() {
+        System.out.println(LONG_SEPARATOR);
+    }
     
     public static void printCongTyHeader() {
         System.out.println("\nTHONG TIN CONG TY VUA NHAP LA:");
@@ -79,41 +82,13 @@ public class OutputFormatter {
         System.out.println(SHORT_SEPARATOR);
     }
     
-    public static void printTitle(String title) {
-        System.out.println("\n" + title.toUpperCase());
-    }
-    
-    public static void printSeparator() {
-        System.out.println(LONG_SEPARATOR);
-    }
-    
-    public static void printSmallSeparator() {
-        System.out.println(SHORT_SEPARATOR);
-    }
-    
-    public static void printMessage(String message) {
-        System.out.println(message);
-    }
-    
-    public static void printFormattedValue(String label, double value) {
-        System.out.printf("%s: %.2f\n", label, value);
-    }
-    
-    public static void printFormattedValue(String label, int value) {
-        System.out.printf("%s: %d\n", label, value);
-    }
-    
-    public static void printFormattedValue(String label, String value) {
-        System.out.printf("%s: %s\n", label, value);
-    }
-    
     public static void printDanhSachNhanVien(List<NhanVien> dsNhanVien, String title) {
         if (dsNhanVien == null || dsNhanVien.isEmpty()) {
-            printMessage("Danh sach nhan vien trong!");
+            System.out.println("Danh sach nhan vien trong!");
             return;
         }
         
-        printTitle(title);
+        System.out.println("\n" + title.toUpperCase());
         printNhanVienHeader();
         
         for (NhanVien nv : dsNhanVien) {

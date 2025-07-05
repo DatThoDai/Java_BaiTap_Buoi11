@@ -9,7 +9,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         congTy = new CongTy();
          int luaChon;
-//        taodulieu();
+        taodulieu();
         do {
             showMenu();
             luaChon = Integer.parseInt(scanner.nextLine());
